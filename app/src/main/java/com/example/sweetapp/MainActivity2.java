@@ -18,6 +18,8 @@ public class MainActivity2 extends AppCompatActivity {
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Toast.makeText(MainActivity2.this, "xXHXXXXxxxellodddddddddd", Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity2.this, "xXHXXXXxxxellodddddddddd", Toast.LENGTH_SHORT).show();
             }
         });
