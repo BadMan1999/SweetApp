@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bcakground"
     android:orientation="vertical"
-    tools:context=".SplashActivity">
+    tools:context=".Activity.SplashActivity">
 
 
     <de.hdodenhof.circleimageview.CircleImageView

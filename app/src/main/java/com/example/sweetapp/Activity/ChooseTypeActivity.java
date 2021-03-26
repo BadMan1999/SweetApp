@@ -1,4 +1,4 @@
-package com.example.sweetapp;
+package com.example.sweetapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,13 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Selctor_in_human extends AppCompatActivity {
+import com.example.sweetapp.R;
+
+public class ChooseTypeActivity extends AppCompatActivity {
     Button btn_Chalet_Owner,btn_tenant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selctor_in_human);
+        setContentView(R.layout.activity_choose_type);
 
         btn_Chalet_Owner=findViewById(R.id.btn_Chalet_Owner);
         btn_tenant=findViewById(R.id.btn_tenant);
@@ -22,7 +24,7 @@ public class Selctor_in_human extends AppCompatActivity {
         btn_Chalet_Owner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Selctor_in_human.this, start_project_ChaletOwner.class);
+                Intent intent=new Intent(ChooseTypeActivity.this, ChaletOwnerSingUpOrLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -32,14 +34,11 @@ public class Selctor_in_human extends AppCompatActivity {
         btn_tenant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Selctor_in_human.this, Start_project_tenant.class);
+                Intent intent=new Intent(ChooseTypeActivity.this, TenantSingUpOrLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
-
-
-
 
     }
 }

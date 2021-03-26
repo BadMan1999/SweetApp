@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:orientation="vertical"
 android:background="@drawable/bcakground"
-tools:context=".Start_project_tenant">
-
+android:orientation="vertical"
+tools:context=".Activity.ChooseTypeActivity">>
 
 
 <Button
-    android:id="@+id/btn_sgin_up_tenant"
+    android:id="@+id/btn_Chalet_Owner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="80dp"
     android:layout_marginTop="280dp"
     android:layout_marginRight="80dp"
-    android:background="@drawable/Edit_Text"
-    android:text="التسجيل"
+    android:background="@drawable/edit_text"
+    android:text="صاحب الشاليه"
     android:textColor="@color/black"
     android:textSize="30sp" />
 
 <Button
-    android:id="@+id/btn_Login_tenant"
+    android:id="@+id/btn_tenant"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="80dp"
     android:layout_marginTop="50dp"
     android:layout_marginRight="80dp"
-    android:background="@drawable/Edit_Text"
-    android:text="تسجيل الدخول"
+    android:background="@drawable/edit_text"
+    android:text="مستأجر"
     android:textColor="@color/black"
     android:textSize="30sp" />
+
 
 </LinearLayout>

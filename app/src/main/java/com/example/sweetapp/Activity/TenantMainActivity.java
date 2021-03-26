@@ -1,16 +1,16 @@
-package com.example.sweetapp;
+package com.example.sweetapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class sign_up_tenant extends AppCompatActivity {
+import com.example.sweetapp.R;
+
+public class TenantMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_tenant);
-
-
+        setContentView(R.layout.activity_tenant_main);
     }
 }

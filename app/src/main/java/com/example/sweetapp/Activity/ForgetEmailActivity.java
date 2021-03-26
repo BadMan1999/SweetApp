@@ -1,14 +1,14 @@
-package com.example.sweetapp;
+package com.example.sweetapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class sign_up_ChaletOwner extends AppCompatActivity {
+public class ForgetEmailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up__chalet_owner);
+        setContentView(R.layout.activity_forget_email);
     }
 }

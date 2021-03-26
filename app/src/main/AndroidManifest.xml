@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SweetApp">
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".Login_tenant" />
-        <activity android:name=".Login_Chalet_Owner" />
-        <activity android:name=".sign_up_tenant" />
-        <activity android:name=".sign_up_ChaletOwner" />
-        <activity android:name=".Start_project_tenant" />
-        <activity android:name=".start_project_ChaletOwner" />
-        <activity android:name=".Selctor_in_human" />
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.TenantMainActivity"></activity>
+        <activity android:name=".Activity.ForgetEmailActivity" />
+        <activity android:name=".Activity.ChaletOwnerMainActivity" />
+        <activity android:name=".Activity.TenantLoginActivity" />
+        <activity android:name=".Activity.ChalatOwnetLoginActivity" />
+        <activity android:name=".Activity.ChaletOwnerSingupActivity" />
+        <activity android:name=".Activity.TenantSingUpOrLoginActivity" />
+        <activity android:name=".Activity.ChaletOwnerSingUpOrLoginActivity" />
+        <activity android:name=".Activity.ChooseTypeActivity" />
+        <activity android:name=".Activity.TenantSingUpActivity" />
+        <activity android:name=".Activity.SplashActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

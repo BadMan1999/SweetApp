@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bcakground"
-    tools:context=".Login_tenant">
+    tools:context=".Activity.TenantLoginActivity">
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/splash_image"
         android:layout_width="135dp"
@@ -19,6 +21,7 @@
         app:civ_border_width="2dp" />
 
     <EditText
+        android:id="@+id/TenantLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -31,6 +34,7 @@
 
 
     <EditText
+        android:id="@+id/TenantLoginPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -41,6 +45,7 @@
         android:hint="كلمة المرور"
         android:textColorHint="@color/black" />
     <TextView
+        android:id="@+id/TenantForgetPass"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
@@ -57,13 +62,16 @@
 
 
     <Button
+        android:id="@+id/TenantLoginbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
+        android:background="@drawable/button"
         android:layout_marginTop="30dp"
         android:layout_marginRight="80dp"
         android:layout_marginLeft="80dp"
         android:text="تسجيل الدخول"
+        android:textSize="27dp"
+        android:textStyle="bold"
         />
 
 </LinearLayout>

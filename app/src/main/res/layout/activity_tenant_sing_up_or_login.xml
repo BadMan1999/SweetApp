@@ -6,30 +6,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bcakground"
-    tools:context=".start_project_ChaletOwner">
+    tools:context=".Activity.TenantSingUpOrLoginActivity">
 
 
 
     <Button
-        android:id="@+id/btn_sgin_up_ChaletOwner"
+        android:id="@+id/tenantSingup_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="280dp"
         android:layout_marginRight="80dp"
-        android:background="@drawable/Edit_Text"
+        android:background="@drawable/edit_text"
         android:text="التسجيل"
         android:textColor="@color/black"
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/btn_Login_ChaletOwner"
+        android:id="@+id/tenantLogin_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="80dp"
-        android:background="@drawable/Edit_Text"
+        android:background="@drawable/edit_text"
         android:text="تسجيل الدخول"
         android:textColor="@color/black"
         android:textSize="30sp" />

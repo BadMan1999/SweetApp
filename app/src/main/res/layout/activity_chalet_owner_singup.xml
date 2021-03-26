@@ -2,12 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bcakground"
     android:orientation="vertical"
-    tools:context=".sign_up_ChaletOwner">
+    tools:context=".Activity.ChaletOwnerSingupActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/splash_image"
@@ -21,6 +20,7 @@
         app:civ_border_width="2dp" />
 
     <EditText
+        android:id="@+id/chaletOwnerName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -35,6 +35,7 @@
 
 
     <EditText
+        android:id="@+id/chaletOwnerPhone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -47,6 +48,7 @@
 
 
     <EditText
+        android:id="@+id/chaletOwnerEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -59,6 +61,7 @@
 
 
     <EditText
+        android:id="@+id/chaletOwnerPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -70,12 +73,12 @@
         android:textColorHint="@color/black" />
 
     <Button
+        android:id="@+id/chaletOwnerRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:text="التسجيل"
         android:gravity="center"
-
         android:textColor="@color/black"
         android:textSize="25dp"
         android:layout_marginTop="10dp"
@@ -83,7 +86,6 @@
         android:background="@drawable/button"
 
         />
-
 
 
 </LinearLayout>
