@@ -6,6 +6,7 @@
 
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="264dp"
         android:orientation="horizontal">
@@ -18,7 +19,7 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/EditChalet"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="94dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/white"
@@ -40,8 +41,10 @@
             android:layout_marginLeft="15dp">
 
             <ImageView
-                android:layout_width="310dp"
-                android:layout_height="150dp"
+                android:layout_width="307dp"
+                android:layout_height="154dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
                 android:src="@drawable/splash"
 
 
@@ -53,7 +56,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:text="600شيكل "
@@ -97,11 +100,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="10H"
                     android:textColor="#0B0A0A"
                     android:textSize="16sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="3dp"
+
 
 
                     />
@@ -109,9 +115,11 @@
                 <TextView
                     android:layout_width="250dp"
                     android:layout_height="35dp"
+                    android:layout_marginRight="40dp"
                     android:text="غزة/ شارع النصر /مقابل مول ستبس"
                     android:textColor="#0B0A0A"
                     android:textSize="16sp"
+                    android:layout_marginTop="3dp"
 
 
                     />

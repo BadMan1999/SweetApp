@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.sweetapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ChooseTypeActivity extends AppCompatActivity {
     Button btn_Chalet_Owner,btn_tenant;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class ChooseTypeActivity extends AppCompatActivity {
 
         btn_Chalet_Owner=findViewById(R.id.btn_Chalet_Owner);
         btn_tenant=findViewById(R.id.btn_tenant);
+        mAuth =FirebaseAuth.getInstance();
 
 
         btn_Chalet_Owner.setOnClickListener(new View.OnClickListener() {
@@ -40,5 +44,17 @@ public class ChooseTypeActivity extends AppCompatActivity {
             }
         });
 
+    }
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            sendUserToActivety();
+        }
+    }
+
+    private void sendUserToActivety() {
+        Intent regIntent = new Intent(ChooseTypeActivity.this, ChaletOwnerMainActivity.class);
+        startActivity(regIntent);
     }
 }
