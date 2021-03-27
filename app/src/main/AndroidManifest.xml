@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SweetApp">
-        <activity android:name=".Activity.NewPasswordActivity"></activity>
+        <activity android:name=".Activity.ChaletListActivity"></activity>
+        <activity android:name=".Activity.NewPasswordActivity" />
         <activity android:name=".Activity.ForgetPasswordActivity" />
         <activity android:name=".Activity.TenantMainActivity" />
         <activity android:name=".Activity.ForgetEmailActivity" />
