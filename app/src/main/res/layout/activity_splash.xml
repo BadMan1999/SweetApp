@@ -28,7 +28,7 @@
         android:layout_marginLeft="70dp"
         android:layout_marginTop="20sp"
 
-        android:textColor="@color/green"
+        android:textColor="#3B5B55"
         android:textSize="40sp"
 
         android:text="Sweet App"

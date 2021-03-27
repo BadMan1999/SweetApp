@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SweetApp">
-        <activity android:name=".Activity.TenantMainActivity"></activity>
+        <activity android:name=".Activity.NewPasswordActivity"></activity>
+        <activity android:name=".Activity.ForgetPasswordActivity" />
+        <activity android:name=".Activity.TenantMainActivity" />
         <activity android:name=".Activity.ForgetEmailActivity" />
         <activity android:name=".Activity.ChaletOwnerMainActivity" />
         <activity android:name=".Activity.TenantLoginActivity" />
@@ -19,17 +21,14 @@
         <activity android:name=".Activity.ChaletOwnerSingUpOrLoginActivity" />
         <activity android:name=".Activity.ChooseTypeActivity" />
         <activity android:name=".Activity.TenantSingUpActivity" />
-        <activity android:name=".Activity.SplashActivity" > <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" /></intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".Activity.MainActivity">
-
-
-        </activity>
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>
