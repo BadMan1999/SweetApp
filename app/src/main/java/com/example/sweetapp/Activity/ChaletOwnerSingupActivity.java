@@ -25,9 +25,9 @@ import java.util.regex.Pattern;
 
 public class ChaletOwnerSingupActivity extends AppCompatActivity {
 
-    private EditText chaletOwnerName, chaletOwnerPhone, chaletOwnerEmail, chaletOwnerPassword;
-    private Button chaletOwnerRegister;
-    private FirebaseAuth mAuth;
+    EditText chaletOwnerName, chaletOwnerPhone, chaletOwnerEmail, chaletOwnerPassword;
+    Button chaletOwnerRegister;
+    FirebaseAuth mAuth;
     String Email, Password;
 
 
@@ -41,8 +41,7 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
         chaletOwnerPassword = findViewById(R.id.chaletOwnerPassword);
         chaletOwnerRegister = findViewById(R.id.chaletOwnerRegister);
         mAuth = FirebaseAuth.getInstance();
-        Email = chaletOwnerEmail.getText().toString().trim();
-        Password = chaletOwnerPassword.getText().toString().trim();
+
 
         chaletOwnerRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +54,8 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
     }
 
     private void registerChaletOwner() {
+        Email = chaletOwnerEmail.getText().toString().trim();
+        Password = chaletOwnerPassword.getText().toString().trim();
         if (Email.isEmpty()) {
             chaletOwnerEmail.setError("Please Enter Email");
             chaletOwnerEmail.requestFocus();

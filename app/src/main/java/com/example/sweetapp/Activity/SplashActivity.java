@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     sleep(5*1000);
 
-                    Intent intent=new Intent(SplashActivity.this, Selctor_in_human.class);
+                    Intent intent=new Intent(SplashActivity.this, ChooseTypeActivity.class);
                     startActivity(intent);
                     finish();
 

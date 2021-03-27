@@ -32,8 +32,7 @@ public class TenantLoginActivity extends AppCompatActivity {
         TenantLoginEmail  =findViewById(R.id.TenantLoginEmail);
         TenantLoginbtn  =findViewById(R.id.TenantLoginbtn);
         TenantForgetPass  =findViewById(R.id.TenantForgetPass);
-        Email= TenantLoginEmail.getText().toString().trim();
-        Password= TenantLoginPassword.getText().toString().trim();
+
         mAuth = FirebaseAuth.getInstance();
 
         TenantLoginbtn.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +44,8 @@ public class TenantLoginActivity extends AppCompatActivity {
     }
 
     private void singin() {
+        Email= TenantLoginEmail.getText().toString().trim();
+        Password= TenantLoginPassword.getText().toString().trim();
         if (Email.isEmpty()) {
             TenantLoginEmail.setError("Email is required");
             TenantLoginEmail.requestFocus();

@@ -33,8 +33,7 @@ public class ChalatOwnetLoginActivity extends AppCompatActivity {
         ChaletOwnerLoginEmail  =findViewById(R.id.ChaletOwnerLoginEmail);
         ChaletOwnerLoginbtn  =findViewById(R.id.ChaletOwnerLoginbtn);
         ChaletOwnerForgetPass  =findViewById(R.id.ChaletOwnerForgetPass);
-        Email= ChaletOwnerLoginEmail.getText().toString().trim();
-        Password= ChaletOwnerLoginPassword.getText().toString().trim();
+
         mAuth = FirebaseAuth.getInstance();
 
         ChaletOwnerLoginbtn.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +45,8 @@ public class ChalatOwnetLoginActivity extends AppCompatActivity {
     }
 
     private void singin() {
+        Email= ChaletOwnerLoginEmail.getText().toString().trim();
+        Password= ChaletOwnerLoginPassword.getText().toString().trim();
         if (Email.isEmpty()) {
             ChaletOwnerLoginEmail.setError("Email is required");
             ChaletOwnerLoginEmail.requestFocus();

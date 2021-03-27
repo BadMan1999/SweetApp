@@ -35,8 +35,7 @@ public class TenantSingUpActivity extends AppCompatActivity {
         TenantPassword =findViewById(R.id.TenantPassword);
         TenantRegister =findViewById(R.id.TenantRegister);
         mAuth = FirebaseAuth.getInstance();
-        Email = TenantEmail.getText().toString().trim();
-        Password = TenantPassword.getText().toString().trim();
+
         TenantRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +47,8 @@ public class TenantSingUpActivity extends AppCompatActivity {
     }
 
     private void registerTenant() {
+        Email = TenantEmail.getText().toString().trim();
+        Password = TenantPassword.getText().toString().trim();
         if (Email.isEmpty()) {
             TenantEmail.setError("Please Enter Email");
             TenantEmail.requestFocus();
