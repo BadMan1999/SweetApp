@@ -16,13 +16,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class TenantSingUpActivity extends AppCompatActivity {
 
     private EditText TenantName,TenantPhone,TenantEmail,TenantPassword;
     private Button TenantRegister;
     FirebaseAuth mAuth;
-    String Email, Password;
+    String Email, Password,Uid,Name,PhoneNumber;
+    private FirebaseDatabase database;
+    private DatabaseReference rootRef;
 
 
     @Override
@@ -35,7 +41,9 @@ public class TenantSingUpActivity extends AppCompatActivity {
         TenantPassword =findViewById(R.id.TenantPassword);
         TenantRegister =findViewById(R.id.TenantRegister);
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
 
+        rootRef=database.getReference("Sweet App");
         TenantRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +57,8 @@ public class TenantSingUpActivity extends AppCompatActivity {
     private void registerTenant() {
         Email = TenantEmail.getText().toString().trim();
         Password = TenantPassword.getText().toString().trim();
+        Name = TenantName.getText().toString().trim();
+        PhoneNumber = TenantPhone.getText().toString().trim();
         if (Email.isEmpty()) {
             TenantEmail.setError("Please Enter Email");
             TenantEmail.requestFocus();
@@ -73,9 +83,19 @@ public class TenantSingUpActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    Uid = mAuth.getCurrentUser().getUid();
                     finish();
+                    HashMap tenantDetails =new HashMap();
+                    tenantDetails.put("Uid",Uid);
+                    tenantDetails.put("Name",Name);
+                    tenantDetails.put("PhoneNumber",PhoneNumber);
+                    tenantDetails.put("Email",Email);
+                    tenantDetails.put("Password",Password);
+
                     startActivity(new Intent(TenantSingUpActivity.this, TenantMainActivity.class));
-                } else {
+                    rootRef.child("Users").child("Tenant").child(Uid).child("Details").setValue(tenantDetails);
+                }
+                else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();

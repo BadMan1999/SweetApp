@@ -20,7 +20,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class ChaletOwnerSingupActivity extends AppCompatActivity {
@@ -28,7 +31,9 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
     EditText chaletOwnerName, chaletOwnerPhone, chaletOwnerEmail, chaletOwnerPassword;
     Button chaletOwnerRegister;
     FirebaseAuth mAuth;
-    String Email, Password;
+    private FirebaseDatabase database;
+    private DatabaseReference rootRef;
+    String Email, Password,Uid,Name,PhoneNumber;
 
 
     @Override
@@ -41,12 +46,16 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
         chaletOwnerPassword = findViewById(R.id.chaletOwnerPassword);
         chaletOwnerRegister = findViewById(R.id.chaletOwnerRegister);
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+
+        rootRef=database.getReference("Sweet App");
 
 
         chaletOwnerRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerChaletOwner();
+
             }
         });
 
@@ -54,6 +63,8 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
     }
 
     private void registerChaletOwner() {
+        Name = chaletOwnerName.getText().toString().trim();
+        PhoneNumber = chaletOwnerPhone.getText().toString().trim();
         Email = chaletOwnerEmail.getText().toString().trim();
         Password = chaletOwnerPassword.getText().toString().trim();
         if (Email.isEmpty()) {
@@ -80,8 +91,18 @@ public class ChaletOwnerSingupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    Uid = mAuth.getCurrentUser().getUid();
                     finish();
+                    HashMap userDetails =new HashMap();
+                    userDetails.put("Uid",Uid);
+                    userDetails.put("Name",Name);
+                    userDetails.put("PhoneNumber",PhoneNumber);
+                    userDetails.put("Email",Email);
+                    userDetails.put("Password",Password);
+                    rootRef.child("Users").child("Chalet Owner").child(Uid).child("Details").setValue(userDetails);
                     startActivity(new Intent(ChaletOwnerSingupActivity.this, ChaletOwnerMainActivity.class));
+
+
                 } else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
