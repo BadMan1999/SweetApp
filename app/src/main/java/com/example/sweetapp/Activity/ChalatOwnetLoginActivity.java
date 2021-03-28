@@ -35,6 +35,14 @@ public class ChalatOwnetLoginActivity extends AppCompatActivity {
         ChaletOwnerForgetPass  =findViewById(R.id.ChaletOwnerForgetPass);
 
         mAuth = FirebaseAuth.getInstance();
+        ChaletOwnerForgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChalatOwnetLoginActivity.this,ForgetPasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         ChaletOwnerLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override

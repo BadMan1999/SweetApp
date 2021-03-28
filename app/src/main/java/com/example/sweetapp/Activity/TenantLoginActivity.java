@@ -34,6 +34,14 @@ public class TenantLoginActivity extends AppCompatActivity {
         TenantForgetPass  =findViewById(R.id.TenantForgetPass);
 
         mAuth = FirebaseAuth.getInstance();
+        TenantForgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TenantLoginActivity.this,ForgetPasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         TenantLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
