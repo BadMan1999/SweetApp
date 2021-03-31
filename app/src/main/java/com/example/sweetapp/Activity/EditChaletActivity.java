@@ -6,11 +6,17 @@ import android.os.Bundle;
 
 import com.example.sweetapp.R;
 
-public class NewPasswordActivity extends AppCompatActivity {
+public class EditChaletActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_password);
+        setContentView(R.layout.activity_edit_chalet);
+
+
+
+
+
+
     }
 }
