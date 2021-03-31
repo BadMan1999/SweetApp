@@ -42,9 +42,7 @@ public class AddChaletActivity extends AppCompatActivity {
     private void openPopUpWindow() {
 
         Intent PopUpWindow=new Intent(AddChaletActivity.this,PopUpWindowChalet.class);
-
-
-
-
     }
+
+
 }
